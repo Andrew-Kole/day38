@@ -1,0 +1,5 @@
+temperature:
+  css: '#temperatureId'
+label:
+  css: '#temperatureLabel'
+
