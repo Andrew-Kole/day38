@@ -4,4 +4,4 @@ def store_data(date, temperature):
 
 
 if __name__ == "__main__":
-    print(read_data())
+    pass

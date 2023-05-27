@@ -1,9 +1,8 @@
 import streamlit as st
 from datetime import datetime as dt
-import pandas as pd
-import plotly.express as px
 import extractorData as ed
 from fileWriter import store_data
+import graphCreator as gc
 
 st.set_page_config(layout="wide")
 
@@ -18,10 +17,7 @@ if store_button:
     store_data(date_str, temperature)
 
 if graph_button:
-    frame = pd.read_csv("files/data.txt")
-    dates = frame["date"]
-    temperatures = frame["temperature"]
-    figure = px.line(x=dates, y=temperatures, labels={"x":"Dates", "y":"Temperatures(C)"})
+    figure = gc.build_graph()
     st.plotly_chart(figure)
 
 
